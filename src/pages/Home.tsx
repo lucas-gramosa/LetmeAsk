@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import illustrationImg from '../assets/images/illustration.svg'
+import illustrationImg from '../assets/images/illustration.svg';
 import logImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 import "../styles/auth.scss";
@@ -12,7 +12,7 @@ export function Home() {
     const navigate = useNavigate();
     const {user, signInWithGoogle } = useAuth();
         
-    async function handCreateRoom() {    
+    async function handleCreateRoom() {    
         if (!user) {
             await signInWithGoogle()
         }
@@ -30,7 +30,7 @@ export function Home() {
             <main>
                 <div className="main-content">
                 <img src={logImg} alt="letmeask" />
-                <button onClick={handCreateRoom}className= "create-room">
+                <button onClick={handleCreateRoom}className= "create-room">
                     <img src={googleIconImg} alt="logo do google" />
                     Crie sua sala com o google
                 </button>
@@ -48,4 +48,4 @@ export function Home() {
             </main>
         </div>
     )
-}
+};
